@@ -1,0 +1,212 @@
+{
+    "_version": "1.17.0",
+    "sap.app": {
+        "id": "aprobacioncecos",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.16.5",
+            "toolsId": "feaf924d-58ad-48a3-9f1d-06a329c78356"
+        },
+        "dataSources": {
+            "ZSERV_CBG_GETDATA_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSERV_CBG_GETDATA_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/ZSERV_CBG_GETDATA_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "ZSERV_CBG_APROV_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSERV_CBG_APROV_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/ZSERV_CBG_APROV_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            },
+            "ZSERV_CBG_GET_BLOQDIR_SRV": {
+                "uri": "/sap/opu/odata/sap/ZSERV_CBG_GET_BLOQDIR_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/ZSERV_CBG_GET_BLOQDIR_SRV/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.71.19",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "aprobacioncecos.i18n.i18n"
+                }
+            },
+            "ZSERV_CBG_GETDATA_SRV": {
+                "dataSource": "ZSERV_CBG_GETDATA_SRV",
+                "preload": true,
+                "settings": {}
+            },
+            "ZSERV_CBG_APROV_SRV": {
+                "dataSource": "ZSERV_CBG_APROV_SRV",
+                "preload": true,
+                "settings": {}
+            },
+            "ZSERV_CBG_GET_BLOQDIR_SRV": {
+                "dataSource": "ZSERV_CBG_GET_BLOQDIR_SRV",
+                "preload": true,
+                "settings": {}
+            },
+            "Solicitudes": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "Centro": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "Direccion": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "Bloqueo": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "aprobacioncecos.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteMaster",
+                    "pattern": "",
+                    "target": [
+                        "TargetMaster"
+                    ]
+                },
+                {
+                    "name": "RouteDetail",
+                    "pattern": "Detail/{centro}",
+                    "target": [
+                        "TargetMain",
+                        "TargetDetail"
+                    ]
+                },
+                {
+                    "name": "RouteEmpty",
+                    "pattern": "NoData",
+                    "target": [
+                        "TargetMain",
+                        "TargetNoData"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMain": {
+                    "viewType": "XML",
+                    "viewName": "Main",
+                    "viewId": "MainView",
+                    "controlId": "app",
+                    "controlAggregation": "pages",
+                    "clearAggregation": false,
+                    "viewLevel": 0
+                },
+                "TargetMaster": {
+                    "parent": "TargetMain",
+                    "viewType": "XML",
+                    "viewName": "Master",
+                    "viewId": "MasterView",
+                    "controlId": "splitApp",
+                    "controlAggregation": "masterPages",
+                    "viewLevel": 1
+                },
+                "TargetDetail": {
+                    "parent": "TargetMain",
+                    "viewType": "XML",
+                    "viewName": "Detail",
+                    "viewId": "DetailView",
+                    "controlId": "splitApp",
+                    "controlAggregation": "detailPages",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewLevel": 2
+                },
+                "TargetNoData": {
+                    "parent": "TargetMain",
+                    "viewType": "XML",
+                    "viewName": "NoData",
+                    "viewId": "NoDataView",
+                    "controlId": "splitApp",
+                    "controlAggregation": "detailPages",
+                    "transition": "slide",
+                    "clearAggregation": true,
+                    "viewLevel": 2
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "aprobacioncecos.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

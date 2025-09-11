@@ -1,0 +1,15 @@
+<mvc:View 
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+	controllerName="aprobacioncecos.controller.NoData">
+
+	<MessagePage
+		id="messagePage"
+		title="Detalle de centro"
+		text="Sin datos"
+		icon="{sap-icon://product}"
+		description="Seleccione un centro de la lista para visualizar su detalle.">
+	</MessagePage>
+
+</mvc:View>
