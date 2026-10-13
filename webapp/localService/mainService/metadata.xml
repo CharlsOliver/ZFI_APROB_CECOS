@@ -52,8 +52,8 @@
                     <End EntitySet="ItemsSet" Role="ToRole_headtoitem"/>
                 </AssociationSet>
             </EntityContainer>
-            <atom:link rel="self" href="http://svgwdap0.grupobafar.com:8000/sap/opu/odata/sap/ZSERV_PPL_GETREQ_A_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
-            <atom:link rel="latest-version" href="http://svgwdap0.grupobafar.com:8000/sap/opu/odata/sap/ZSERV_PPL_GETREQ_A_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="self" href="http://svgwqap0.grupobafar.com:8000/sap/opu/odata/sap/ZSERV_PPL_GETREQ_A_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://svgwqap0.grupobafar.com:8000/sap/opu/odata/sap/ZSERV_PPL_GETREQ_A_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
         </Schema>
     </edmx:DataServices>
 </edmx:Edmx>

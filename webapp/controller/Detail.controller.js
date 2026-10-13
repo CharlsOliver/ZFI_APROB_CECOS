@@ -20,7 +20,7 @@ sap.ui.define([
                 this.oUser = sap.ushell.Container.getUser();
                 this.sUserId = this.oUser.getId();
             } else {
-                this.sUserId = "RUVERA";
+                this.sUserId = "HFigueiras";
             }
             console.log("Usuario Fiori:", this.sUserId);
         },
@@ -76,7 +76,6 @@ sap.ui.define([
             this.colFuncional = this.getView().byId("colFuncional");
             this.colMoneda = this.getView().byId("colMoneda");
             this.colCebe = this.getView().byId("colCebe");
-            this.colDerivaCebe = this.getView().byId("colDerivaCebe");
             this.itfControl = this.getView().byId("itfControl");
 
             this.tableTitle.setText(this.txtCentroCosto);
@@ -117,7 +116,6 @@ sap.ui.define([
                     colFuncional: true,
                     colMoneda: true,
                     colCebe: true,
-                    colDerivaCebe: true,
                     itfControl: true
                 },
                 "0002": {
@@ -131,7 +129,6 @@ sap.ui.define([
                     colFuncional: false,
                     colMoneda: false,
                     colCebe: false,
-                    colDerivaCebe: false,
                     itfControl: false
                 },
                 "0003": {
@@ -145,7 +142,6 @@ sap.ui.define([
                     colFuncional: false,
                     colMoneda: false,
                     colCebe: false,
-                    colDerivaCebe: false,
                     itfControl: false
                 }
             };

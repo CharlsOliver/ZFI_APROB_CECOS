@@ -103,12 +103,12 @@
                                 </Column>
 
                                 <Column
-                                    id="colDerivaCebe"
+                                    id="colCege"
                                     demandPopin="true"
                                     minScreenWidth="Tablet"
                                     popinDisplay="Inline">
                                     <header>
-                                        <Text text="Derivar a CeGe" />
+                                        <Text text="Centro Gestor" />
                                     </header>
                                 </Column>
                             </columns>

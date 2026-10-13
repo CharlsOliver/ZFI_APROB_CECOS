@@ -16,12 +16,12 @@ sap.ui.define([
 				let year = sDate.substring(0, 4);
 				let month = sDate.substring(4, 6);
 				let day = sDate.substring(6, 8);
-				dateObject = new Date(Date.UTC(year, month - 1, day));
+				dateObject = new Date(year, month - 1, day);
 			} else if (sDate.length === 10 && sDate.includes('.')) {
 				// Formato dd.MM.yyyy
 				let [day, month, year] = sDate.split('.');
 				if (day && month && year) {
-					dateObject = new Date(Date.UTC(year, month - 1, day));
+					dateObject = new Date(year, month - 1, day);
 				}
 			} else {
 				return null;

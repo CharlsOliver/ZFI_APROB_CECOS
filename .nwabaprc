@@ -4,9 +4,9 @@
 	"conn_server": "http://svgwdap0.grupobafar.com:8000/",
 	"conn_client": "100",
 	"conn_user": "RUVERA",
-	"conn_password": "Septiembre.2025",
+	"conn_password": "Octubre.2026",
 	"abap_package": "ZBAFAR_FIORI",
 	"abap_bsp": "ZFI_APROB_CECOS",
 	"abap_bsp_text": "Aplicacion para aprobación de solicitudes de centros.",
-	"abap_transport": "GWDK904106"
+	"abap_transport": "GWDK905098"
 }
